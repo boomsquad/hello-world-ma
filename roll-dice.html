@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Rolling Dice</title>
+        <script src = "roll-dice.js"></script>
+
+        <!-- Creates colored backgrounds and table elements -->
+        <style>
+            h1 { font-size: 40px;
+                 border-style: solid;
+                 border-radius: 15px;
+                 padding: 5px;
+                 background-color: bisque;
+                 display: inline-block; }
+            body { background-color: cornsilk;}
+            p { font-size: 18px; }
+
+            button { font-size: 35px; 
+                     text-align: center; }
+            button:hover { background-color: black;
+                           color: white; }
+            
+            table, th, tr, td { text-align: center;
+                                border: 1px solid black;
+                                border-collapse: separate;
+                                padding: 15px; }
+            table { width: 60%;
+                    margin: auto;
+                    background-color: bisque; }
+            th { background-color: cornsilk; }
+            
+        </style>
+    </head>
+
+    <!-- onload makes the text feilds start with random numbers from the javascript code -->
+    <body onload="RollDice()">
+        <h1>Rules</h1>
+        <p>The dice system is that of the board game Risk.
+            The attacker starts with three <br></br> dice and the defender has two.
+            They will both roll at the same time and the <br></br> higher dice win. If 
+            there is a tie the defender wins the tie.
+        </p>
+        <br></br>
+
+        <div style="text-align: center;">
+            <button class="button" onclick="RollDice()" autofocus>Roll</button><br></br> 
+        </div>
+               
+        <!-- neatly organizes dice rolls -->
+        <table class="center">
+            <tr>
+                <th>Attckers Dice</th>
+                <th>Defenders Dice</th>
+            </tr>
+            <tr>
+                <td>Dice One: <input id="attackerOne" type="text" value="" size="8" disabled onload="RollDice()"></td>
+                <td>Dice One: <input id="defenderOne" type="text" value="" size="8" disabled></td>
+            </tr>
+            <tr>
+                <td>Dice Two: <input id="attackerTwo" type="text" value="" size="8" disabled></td>
+                <td>Dice Two: <input id="defenderTwo" type="text" value="" size="8" disabled></td>
+            </tr>
+            <tr>
+                <td>Dice Three: <input id="attackerThree" type="text" value="" size="8" disabled></td>
+            </tr>
+        </table>
+    </body>
+</html>
